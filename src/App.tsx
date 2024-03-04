@@ -3,7 +3,6 @@ import { Header } from "./components/Header";
 import { Unauthorized } from "./components/Unauthorized";
 import { AuthProvider } from "./components/provider/AuthProvider";
 import { SignOutButton } from "./components/SignOutButton";
-import { Test } from "./components/Test";
 import { UserInfo } from "./components/UserInfo";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <AuthProvider unauthorized={<Unauthorized />}>
           <>
-            <Header />
+            <Header isLogined />
             <UserInfo />
             <SignOutButton />
           </>

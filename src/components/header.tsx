@@ -1,6 +1,10 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { requestCodeFlow } from "../auth/utils/requestCodeFlow";
+import { signOut } from "../auth/utils/signOut";
+import { SignOutButton } from "./SignOutButton";
+import { SignInButton } from "./SignInButton";
 
-export const Header = () => {
+export const Header = ({ isLogined }: { isLogined: boolean }) => {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -14,7 +18,7 @@ export const Header = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Home
         </Typography>
-        <Button color="inherit">Login</Button>
+        {isLogined ? <SignOutButton /> : <SignInButton />}
       </Toolbar>
     </AppBar>
   );
