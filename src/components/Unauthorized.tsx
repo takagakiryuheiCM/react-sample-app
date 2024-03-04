@@ -1,10 +1,14 @@
+import { Button, Typography } from "@mui/material";
 import { requestCodeFlow } from "../auth/utils/requestCodeFlow";
+import { Header } from "./Header";
+import { SignInButton } from "./SignInButton";
 
 export function Unauthorized(): React.ReactElement {
   return (
-    <div>
-      <div>ログインしていません。</div>
-      <button onClick={() => requestCodeFlow()}>ログイン</button>
-    </div>
+    <>
+      <Header isLogined={false} />
+      <Typography>ログインしていません。</Typography>
+      <SignInButton />
+    </>
   );
 }
