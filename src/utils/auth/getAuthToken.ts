@@ -1,5 +1,5 @@
 import axios from "axios";
-import { authParams } from "../constants/authParams";
+import { authParams } from "../../constants/authParams";
 import { TAuthInfo } from "./setAuthInfo";
 
 export async function getAuthToken(code: string): Promise<TAuthInfo> {

@@ -1,7 +1,8 @@
 import React from "react";
-import { AuthorizedContext } from "./provider/AuthProvider";
-import { getUserInfo } from "../auth/utils/getUserInfo";
+import { AuthorizedContext } from "./auth/AuthProvider";
+import { getUserInfo } from "../utils/auth/getUserInfo";
 import { useQuery } from "@tanstack/react-query";
+import { Box, CircularProgress } from "@mui/material";
 
 export function UserInfo(): React.ReactElement {
   // Contextから認可情報を取得する
@@ -18,20 +19,30 @@ export function UserInfo(): React.ReactElement {
   });
 
   if (query.isError) {
-    // APIがエラーの場合
     return <div>Failed to get the email</div>;
   } else if (query.isSuccess) {
     // ユーザー情報取得に成功した場合
+    console.log(query.data);
+
     return (
       <div>
         {Object.keys(query.data).map((k: string) => (
-          <div>
+          <div key={k}>
             {k}: {query.data[k]}
           </div>
         ))}
       </div>
     );
   } else {
-    return <div>Loading</div>;
+    return (
+      <Box
+        height="40vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CircularProgress size={100} />
+      </Box>
+    );
   }
 }

@@ -1,8 +1,8 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { requestCodeFlow } from "../auth/utils/requestCodeFlow";
-import { signOut } from "../auth/utils/signOut";
-import { SignOutButton } from "./SignOutButton";
-import { SignInButton } from "./SignInButton";
+import { requestCodeFlow } from "../utils/auth/requestCodeFlow";
+import { signOut } from "../utils/auth/signOut";
+import { SignOutButton } from "./auth/SignOutButton";
+import { SignInButton } from "./auth/SignInButton";
 
 export const Header = ({ isLogined }: { isLogined: boolean }) => {
   return (

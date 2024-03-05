@@ -1,8 +1,8 @@
 import React from "react";
-import { getAuthInfo } from "../../auth/utils/getAuthInfo";
-import { getAuthToken } from "../../auth/utils/getAuthToken";
-import { TAuthInfo, setAuthInfo } from "../../auth/utils/setAuthInfo";
-import { getCode } from "../../auth/utils/getCode";
+import { getAuthInfo } from "../../utils/auth/getAuthInfo";
+import { getAuthToken } from "../../utils/auth/getAuthToken";
+import { TAuthInfo, setAuthInfo } from "../../utils/auth/setAuthInfo";
+import { getCode } from "../../utils/auth/getCode";
 
 type TAuthorizedContext = Readonly<{
   authInfo?: TAuthInfo;

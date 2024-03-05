@@ -1,4 +1,4 @@
-import { authParams } from "../constants/authParams";
+import { authParams } from "../../constants/authParams";
 
 // ログイン画面に遷移する関数
 export function requestCodeFlow(): void {

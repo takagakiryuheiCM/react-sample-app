@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
-import { requestCodeFlow } from "../auth/utils/requestCodeFlow";
+import { requestCodeFlow } from "../utils/auth/requestCodeFlow";
 import { Header } from "./Header";
-import { SignInButton } from "./SignInButton";
+import { SignInButton } from "./auth/SignInButton";
 
 export function Unauthorized(): React.ReactElement {
   return (
