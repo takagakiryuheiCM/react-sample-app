@@ -11,5 +11,5 @@ export const AuthorizedLambdaResult = () => {
     return <CircularProgress />;
   }
 
-  return <>{data}</>;
+  return <>{data}🎉</>;
 };
