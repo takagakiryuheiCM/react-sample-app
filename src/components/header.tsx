@@ -1,10 +1,12 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { requestCodeFlow } from "../utils/auth/requestCodeFlow";
-import { signOut } from "../utils/auth/signOut";
 import { SignOutButton } from "./auth/SignOutButton";
 import { SignInButton } from "./auth/SignInButton";
+import { UserIcon } from "./UserIcon";
 
-export const Header = ({ isLogined }: { isLogined: boolean }) => {
+type TProps = {
+  imageUrl?: string;
+};
+export const Header = ({ imageUrl }: TProps) => {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -18,7 +20,14 @@ export const Header = ({ isLogined }: { isLogined: boolean }) => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Home
         </Typography>
-        {isLogined ? <SignOutButton /> : <SignInButton />}
+        {!!imageUrl ? (
+          <>
+            <UserIcon imageUrl={imageUrl} />
+            <SignOutButton />
+          </>
+        ) : (
+          <SignInButton />
+        )}
       </Toolbar>
     </AppBar>
   );

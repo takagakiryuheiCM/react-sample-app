@@ -31,10 +31,9 @@ export function AuthProvider({
           .then((token) => {
             // LocalStorageに保存
             setAuthInfo(token);
-            // トップページ移動
             window.location.href = "/";
           })
-          .catch((err) => alert("認証に失敗しました。"));
+          .catch((err) => console.log(err));
       }
     }
   });
