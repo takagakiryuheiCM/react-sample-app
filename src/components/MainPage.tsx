@@ -6,11 +6,18 @@ import { UserInfo } from "./UserInfo";
 import { SignOutButton } from "./auth/SignOutButton";
 import { LambdaResViewr } from "./LambdaResViewr";
 import { useGetUserInfo } from "../api/useGetUserInfo";
+import { SignInButton } from "./auth/SignInButton";
 
 export function MainPage() {
   const { data, error, isLoading } = useGetUserInfo();
 
-  if (error) return <div>ユーザーデータ取得に失敗しました。</div>;
+  if (error)
+    return (
+      <>
+        <div>ユーザーデータ取得に失敗しました。</div>
+        <SignInButton />
+      </>
+    );
   if (isLoading || !data)
     return (
       <Box
