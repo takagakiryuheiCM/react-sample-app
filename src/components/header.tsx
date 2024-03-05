@@ -1,7 +1,8 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { SignOutButton } from "./auth/SignOutButton";
-import { SignInButton } from "./auth/SignInButton";
+
 import { UserIcon } from "./UserIcon";
+import { HeaderSignInButton } from "./auth/HeaderSignInButton";
 
 type TProps = {
   imageUrl?: string;
@@ -26,7 +27,7 @@ export const Header = ({ imageUrl }: TProps) => {
             <SignOutButton />
           </>
         ) : (
-          <SignInButton />
+          <HeaderSignInButton />
         )}
       </Toolbar>
     </AppBar>

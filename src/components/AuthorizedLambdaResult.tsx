@@ -1,13 +1,11 @@
 import { CircularProgress } from "@mui/material";
 import { useCallLambdaFunc } from "../api/useCallLambdaFunc";
 
-export const LambdaResResult = () => {
+export const AuthorizedLambdaResult = () => {
   const { data, error, isLoading } = useCallLambdaFunc();
 
   if (error) {
-    console.log(error.message);
-
-    return <p>error</p>;
+    return <p>{error.message}</p>;
   }
   if (isLoading || !data) {
     return <CircularProgress />;
