@@ -21,7 +21,7 @@ export const useGetUserInfo = () => {
 
     // useQueryを使ってユーザ情報を取得するGoogle APIを実行する
     const { data, error, isLoading } = useQuery<{ data: TUserInfo }, Error>({
-        queryKey: [authInfo],
+        queryKey: [],
         queryFn: () =>
             authInfo == null
                 ? Promise.reject(Error(`No AuthInfo`))
