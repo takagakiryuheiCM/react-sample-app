@@ -22,11 +22,13 @@ export function AuthProvider({
 
   React.useEffect(() => {
     // Googleのログイン画面からアプリにリダイレクトした時の処理
+
     if (window.location.pathname === "/") {
       // codeの取得
       const code = getCode();
       if (code != null) {
         // アクセストークンの取得
+
         getAuthToken(code)
           .then((token) => {
             // LocalStorageに保存

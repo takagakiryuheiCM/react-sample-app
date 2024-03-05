@@ -6,6 +6,7 @@ import { Header } from "./Header";
 import { UserInfo } from "./UserInfo";
 import { AuthorizedContext } from "./auth/AuthProvider";
 import { SignOutButton } from "./auth/SignOutButton";
+import { ResViewr } from "./ResViewr";
 
 export function MainPage() {
   // Contextから認可情報を取得する
@@ -28,6 +29,7 @@ export function MainPage() {
         <Header imageUrl={query.data.picture} />
         <UserInfo userInfo={query.data} />
         <SignOutButton />
+        <ResViewr />
       </>
     );
   } else {

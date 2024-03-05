@@ -11,6 +11,7 @@ export async function getAuthToken(code: string): Promise<TAuthInfo> {
       grant_type: authParams.grantType,
       access_type: authParams.accessType,
     };
+    
     const res = await axios.post(
       `https://www.googleapis.com/oauth2/v4/token`,
       params
