@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Typography } from "@mui/material";
-import { Header } from "./Header";
-import { SignInButton } from "./auth/SignInButton";
+import { Header } from "../common/Header";
+import { SignInButton } from "./SignInButton";
 
 export function Unauthorized(): React.ReactElement {
   return (

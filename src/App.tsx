@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Unauthorized } from "./components/Unauthorized";
+import { Unauthorized } from "./components/auth/Unauthorized";
 import { AuthProvider } from "./components/auth/AuthProvider";
-import { MainPage } from "./components/MainPage";
+import { MainPageContainer } from "./page/mainPage/MainPageContainer";
 
 function App() {
   const queryClient = new QueryClient();
@@ -10,7 +10,7 @@ function App() {
     <div>
       <QueryClientProvider client={queryClient}>
         <AuthProvider unauthorized={<Unauthorized />}>
-          <MainPage />
+          <MainPageContainer />
         </AuthProvider>
       </QueryClientProvider>
     </div>

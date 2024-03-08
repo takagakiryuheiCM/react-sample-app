@@ -1,8 +1,8 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { SignOutButton } from "./auth/SignOutButton";
+import { SignOutButton } from "../auth/SignOutButton";
 
 import { UserIcon } from "./UserIcon";
-import { HeaderSignInButton } from "./auth/HeaderSignInButton";
+import { HeaderSignInButton } from "../auth/HeaderSignInButton";
 
 type TProps = {
   imageUrl?: string;

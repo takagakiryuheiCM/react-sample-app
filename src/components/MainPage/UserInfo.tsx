@@ -1,5 +1,5 @@
 import React from "react";
-import { TUserInfo } from "../api/useGetUserInfo";
+import { TUserInfo } from "../../api/useGetUserInfo";
 import {
   Box,
   Button,
@@ -9,8 +9,8 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import { UserIcon } from "./UserIcon";
-import { SignOutButton } from "./auth/SignOutButton";
+import { UserIcon } from "../common/UserIcon";
+import { SignOutButton } from "../auth/SignOutButton";
 
 type TProps = {
   userInfo: TUserInfo;

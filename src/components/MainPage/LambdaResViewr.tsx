@@ -1,13 +1,20 @@
 import { Box, Button } from "@mui/material";
-import { useState } from "react";
 import { AuthorizedLambdaResult } from "./AuthorizedLambdaResult";
 import { NotAuthorizedLambdaResult } from "./NotLambdaResResult";
 
-export function LambdaResViewr() {
-  const [isAuthoraizedLambdaCalled, setIsAuthoraizedLambdaCalled] =
-    useState<boolean>(false);
-  const [isNotAuthoraizedLambdaCalled, setNotIsAuthoraizedLambdaCalled] =
-    useState<boolean>(false);
+type TProps = {
+  isAuthoraizedLambdaCalled: boolean;
+  isNotAuthoraizedLambdaCalled: boolean;
+  onSetIsAuthoraizedLambdaCalled: () => void;
+  onSetIsNotAuthoraizedLambdaCalled: () => void;
+};
+
+export function LambdaResViewr({
+  isAuthoraizedLambdaCalled,
+  isNotAuthoraizedLambdaCalled,
+  onSetIsAuthoraizedLambdaCalled,
+  onSetIsNotAuthoraizedLambdaCalled,
+}: TProps) {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Box
@@ -19,7 +26,7 @@ export function LambdaResViewr() {
       >
         <Button
           variant="contained"
-          onClick={() => setIsAuthoraizedLambdaCalled(true)}
+          onClick={onSetIsAuthoraizedLambdaCalled}
           sx={{ minWidth: 250 }}
         >
           lambdaを呼び出す!
@@ -37,7 +44,7 @@ export function LambdaResViewr() {
         <Button
           variant="contained"
           color="error"
-          onClick={() => setNotIsAuthoraizedLambdaCalled(true)}
+          onClick={onSetIsNotAuthoraizedLambdaCalled}
           sx={{ minWidth: 250 }}
         >
           🚨 認可せずlambdaを呼び出す!

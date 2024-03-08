@@ -1,5 +1,5 @@
 import { CircularProgress } from "@mui/material";
-import { useCallLambdaFunc } from "../api/useCallLambdaFunc";
+import { useCallLambdaFunc } from "../../api/useCallLambdaFunc";
 
 export const AuthorizedLambdaResult = () => {
   const { data, error, isLoading } = useCallLambdaFunc();
