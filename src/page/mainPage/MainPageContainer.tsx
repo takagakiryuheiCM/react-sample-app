@@ -4,7 +4,6 @@ import { UserInfo } from "../../components/MainPage/UserInfo";
 import { LambdaResViewr } from "../../components/MainPage/LambdaResViewr";
 import { useGetUserInfo } from "../../api/useGetUserInfo";
 import { SignInButton } from "../../components/auth/SignInButton";
-import anonimousLogo from "../../images/anonimaus_icon.png";
 import { useState } from "react";
 
 export function MainPageContainer() {
@@ -35,7 +34,7 @@ export function MainPageContainer() {
 
   return (
     <>
-      <Header imageUrl={anonimousLogo} />
+      <Header imageUrl={data.data.picture} />
       <UserInfo userInfo={data.data} />
       <LambdaResViewr
         isAuthoraizedLambdaCalled={isAuthoraizedLambdaCalled}
