@@ -8,14 +8,13 @@ export function SignOutButton({
 }: {
   isBulue?: boolean;
 }): React.ReactElement {
-  const { authInfo } = React.useContext(AuthorizedContext);
   return (
     <Button
       variant="text"
       color={isBulue ? "primary" : "inherit"}
       sx={{ fontSize: "15px" }}
       onClick={() => {
-        signOut(authInfo);
+        signOut();
       }}
     >
       ログアウト

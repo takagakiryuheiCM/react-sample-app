@@ -3,7 +3,6 @@ import { useCallLambdaFunc } from "../../api/useCallLambdaFunc";
 
 export const AuthorizedLambdaResult = () => {
   const { data, error, isLoading } = useCallLambdaFunc();
-
   if (error) {
     return <p>{error.message}</p>;
   }
@@ -11,5 +10,5 @@ export const AuthorizedLambdaResult = () => {
     return <CircularProgress />;
   }
 
-  return <>{data}🎉</>;
+  return <>{data.body}🎉</>;
 };

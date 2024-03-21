@@ -6,7 +6,7 @@ import axios from "axios";
 export const useAuthorizedGetRequest = <TResponse>({ path }: { path: string }) => {
   const { authInfo } = React.useContext(AuthorizedContext);
   const headers = {
-    'Authorization': `Bearer ${authInfo?.id_token}`
+    Authorization: `${authInfo?.id_token}`,
   }
   const { data, error, isLoading } = useQuery<TResponse, Error>(
     {

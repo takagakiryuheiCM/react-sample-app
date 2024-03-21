@@ -19,7 +19,6 @@ export function AuthProvider({
 }>): React.ReactElement | null {
   // LocalStorageから認可情報取得
   const authInfo = getAuthInfo();
-
   React.useEffect(() => {
     // Googleのログイン画面からアプリにリダイレクトした時の処理
 
@@ -28,7 +27,6 @@ export function AuthProvider({
       const code = getCode();
       if (code != null) {
         // アクセストークンの取得
-
         getAuthToken(code)
           .then((token) => {
             // LocalStorageに保存

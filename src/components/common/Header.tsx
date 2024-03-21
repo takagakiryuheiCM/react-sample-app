@@ -1,4 +1,4 @@
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { SignOutButton } from "../auth/SignOutButton";
 
 import { UserIcon } from "./UserIcon";
@@ -9,7 +9,7 @@ type TProps = {
 };
 export const Header = ({ imageUrl }: TProps) => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: "#40BA8D" }}>
       <Toolbar>
         <IconButton
           size="large"
